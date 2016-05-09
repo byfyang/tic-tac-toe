@@ -11,36 +11,8 @@ td {
   box-sizing:border-box;
 }
 
-td:first-child{
-  border-left: none;
-}
-td:last-child{
-  border-right: none;
-}
-
-
-thead tr td{
-  border-top:none;
-  border-bottom: none;
-}
-
-tfoot tr td{
-  border-top:none;
-  border-bottom: none;
-}
-
 .container, .playerTurn {
   text-align: center;
-}
-
-.X, .O {
-  border-radius: 10px;
-}
-.X {
-  background: red;
-}
-.O {
-  background: blue;
 }
 
 .clear {

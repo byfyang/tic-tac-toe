@@ -1,7 +1,7 @@
 function startGame(){
 	document.turn = "x";
 
-	document.winner - null;
+	document.winner = null;
 	set(document.turn + " starts!");
 }
 
