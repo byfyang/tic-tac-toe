@@ -1,5 +1,8 @@
+window.onload = startGame();
+
+
 function startGame(){
-	document.turn = "x";
+	document.turn = "X";
 
 	document.winner = null;
 	set(document.turn + " starts!");
@@ -19,6 +22,8 @@ function nextMove(square){
 		setMessage("Please select a valid box.");
 	}
 }
+
+nextMove();
 
 function switchTurn(){
 	if (checkForWinner(document.turn)){
