@@ -6,12 +6,12 @@ function startGame() {
 	//message to tell X is starting
 	winner = null;
 	setMessage(player1 + " gets to start");
-};
+}
 
 function setMessage(msg) {
 	//get element messages - insert message
 	 document.getElementById('messages').textContent = msg;
-};
+}
 
 //
 function nextMove(square) {
@@ -67,7 +67,11 @@ function checkForWinner(move) {
 	return result;
 }
 
+function reset(){
+		var button = document.getElementById ('button');
+		button.addEventListener('click', location.reload());
+}
 
 
-var button = document.getElementByClassName('reset');
-button.addEventListener('click', function(){window.location.reload(true);});
+
+
