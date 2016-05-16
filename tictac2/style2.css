@@ -1,0 +1,37 @@
+h1{
+	color: white;
+	border-color: black;
+	text-align: center;
+	font-size: 120px;
+	font-family: fantasy;
+}
+
+#messages{
+	font-size: 40px;
+	font-family: fantasy;
+	font-weight: bold;
+}
+
+
+table{
+	margin: 0 auto;
+	border-radius: 10px;
+}
+td {
+  border: 3px solid black;
+  height: 200px;
+  width: 200px;
+  font-size: 110px;
+  font-style: italic;
+  text-align: center;
+  font-color: white;
+}
+
+body{
+	background-image: url(http://www.pulsarwallpapers.com/data/media/3/Alien%20Ink%202560X1600%20Abstract%20Background.jpg);
+}
+
+#button{
+	 : center;
+}
+

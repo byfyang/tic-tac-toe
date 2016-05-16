@@ -2,44 +2,54 @@
 window.onload=startGame();
 
 function startGame() {
-
-	document.turn = "X"; 
+	player1 = "X"; 
 	//message to tell X is starting
-	document.winner = null;
-	setMessage(document.turn + " gets to start");
+	winner = null;
+	setMessage(player1 + " gets to start");
 };
 
 function setMessage(msg) {
 	//get element messages - insert message
-	document.getElementById('messages').textContent = msg;
+	 document.getElementById('messages').textContent = msg;
 };
 
 //
-function nextMove(box) {
-	if (document.winner != null) {
+function nextMove(square) {
+	if (winner != null) {
 		setMessage("Game Over");
-	} else if (box.textContent == ""){
-	box.textContent = document.turn;
+	} else if (square.textContent === ""){
+		square.textContent = player1;
 	//tell user to select a different box
-	switchTurn();
+		switchTurn();
 	} else {
 		setMessage("Please select a different square");
 	}
 }
 
-
 function switchTurn() {
-	if (checkForWinner(document.turn)) {
-		setMessage("Winner is " + document.turn);
-		document.winner = document.turn;
+	if (checkForWinner(player1)) {
+		setMessage(player1 + " wins!");
+		winner = player1;
 //switches turn between O & X
-	} else if (document.turn == 'X') {
-		document.turn = 'O';
-		setMessage("It's " + document.turn + " turn!");
+	} else if (player1 == 'X') {
+		player1 = 'O';
+		setMessage("It's " + player1 + " turn!");
 	} else {
-		document.turn = 'X';
-		setMessage("It's " + document.turn + " turn!");
+		player1 = 'X';
+		setMessage("It's " + player1 + " turn!");
 	}
+}
+
+function checkRow(a, b, c, move) {
+	var result = false;
+	if (getBox(a) === move && getBox(b) === move && getBox(c) === move) {
+		result = true;
+	}
+	return result;
+}
+
+function getBox(number) {
+	return document.getElementById('a'+number).textContent;
 }
 
 function checkForWinner(move) {
@@ -58,14 +68,6 @@ function checkForWinner(move) {
 }
 
 
-function checkRow(a, b, c, move) {
-	var result = false;
-	if (getBoxData(a) == move && getBoxData(b) == move && getBoxData(c) == move) {
-		result = true;
-	}
-	return result;
-}
 
-function getBoxData(number) {
-	//return document.getElementById("b" + number).textContent;
-}
+var button = document.getElementByClassName('reset');
+button.addEventListener('click', function(){window.location.reload(true);});
